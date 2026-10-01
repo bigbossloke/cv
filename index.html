@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yu Xianpin – Real Estate Marketing Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F5;--surface:#FFFFFF;--ink:#16282B;--muted:#56686B;--line:#D5DDDB;
+  --accent:#0E6B5C;--accent-ink:#FFFFFF;--track:#DCE5E2;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Public Sans","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#101B1D;--surface:#162528;--ink:#E6EEEC;--muted:#9DB1AE;--line:#2A3D40;--accent:#4FC3AA;--accent-ink:#0B1517;--track:#25393C}
+}
+:root[data-theme="dark"]{--bg:#101B1D;--surface:#162528;--ink:#E6EEEC;--muted:#9DB1AE;--line:#2A3D40;--accent:#4FC3AA;--accent-ink:#0B1517;--track:#25393C}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.15}
+ul{margin:0;padding:0;list-style:none}
+
+.page{max-width:1120px;margin:0 auto;padding:56px 28px 72px;display:grid;grid-template-columns:300px 1fr;gap:64px}
+
+/* Sidebar */
+.side{position:sticky;top:40px;align-self:start}
+.side h1{font-size:2.9rem;font-weight:700;letter-spacing:-.02em}
+.role{margin:14px 0 28px;font-size:1.05rem;color:var(--muted)}
+.side h2{font-size:1.05rem;font-weight:700;margin:32px 0 10px;padding-top:18px;border-top:2px solid var(--ink)}
+.side li{padding:3px 0}
+.side .sub{display:block;color:var(--muted);font-size:.9rem}
+.contact a{display:block;padding:2px 0;font-weight:500;word-break:break-all}
+.edu-date{font-weight:600;font-size:.9rem;color:var(--accent)}
+.edu-item{margin-bottom:18px}
+.edu-item p{margin:2px 0}
+.small{font-size:.9rem;color:var(--muted)}
+
+/* Main */
+.main section+section{margin-top:56px}
+.main h2{font-size:1.6rem;font-weight:700;margin-bottom:22px;letter-spacing:-.01em}
+.lede{font-size:1.2rem;line-height:1.55;font-weight:500;max-width:62ch}
+.main p{max-width:68ch;margin:0 0 14px}
+
+.job{position:relative;padding-left:28px;border-left:2px solid var(--line);padding-bottom:40px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.job.current::before{background:var(--accent)}
+.job h3{font-size:1.3rem;font-weight:700}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--muted);margin:4px 0 16px;font-size:.95rem}
+.meta b{color:var(--accent);font-weight:600}
+.job h4{font-family:var(--body);font-size:.95rem;font-weight:600;margin:20px 0 8px}
+.job li{position:relative;padding-left:18px;margin-bottom:8px;max-width:68ch}
+.job li::before{content:"";position:absolute;left:0;top:.72em;width:7px;height:2px;background:var(--accent)}
+
+/* Launch results: the one distinctive element */
+.ledger{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 20px;margin:6px 0 14px}
+.launch{display:grid;grid-template-columns:minmax(120px,170px) 1fr auto;gap:6px 20px;align-items:center;padding:16px 0}
+.launch+.launch{border-top:1px solid var(--line)}
+.launch .name{font-family:var(--display);font-weight:700;font-size:1.1rem}
+.bar{height:14px;background:var(--track);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;width:var(--w);background:var(--accent);transform-origin:left;animation:grow 1.2s cubic-bezier(.2,.7,.2,1) .25s both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.units{text-align:right;line-height:1.3;min-width:140px}
+.units b{font-family:var(--display);font-size:1.25rem}
+.units span{display:block;font-size:.85rem;color:var(--muted)}
+.beat{color:var(--accent);font-weight:600}
+.ledger.solo{margin-top:12px}
+
+footer{margin-top:56px;color:var(--muted);font-size:.9rem}
+
+@media (max-width:860px){
+  .page{grid-template-columns:1fr;gap:40px;padding:36px 20px 56px}
+  .side{position:static}
+  .side h1{font-size:2.4rem}
+  .launch{grid-template-columns:1fr auto}
+  .launch .bar{grid-column:1 / -1;order:3}
+  .units{min-width:0}
+}
+@media (prefers-reduced-motion:reduce){.bar i{animation:none}}
+@media print{
+  body{background:#fff;color:#000}
+  .page{display:block;padding:0}
+  .side{position:static}
+  .bar i{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="side">
+    <h1>Yu Xianpin</h1>
+    <p class="role">Real estate marketing manager, Singapore</p>
+
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="tel:+6598360081">+65 9836 0081</a>
+      <a href="mailto:summer.yuxi@gmail.com">summer.yuxi@gmail.com</a>
+    </div>
+
+    <h2>Education</h2>
+    <div class="edu-item">
+      <div class="edu-date">Jan 2010 – Jan 2011</div>
+      <p><strong>M.A., Contemporary China</strong></p>
+      <p>Nanyang Technological University</p>
+      <p class="small">External Panel, Quality Assurance Framework for University (QAFU)</p>
+    </div>
+    <div class="edu-item">
+      <div class="edu-date">Sep 2001 – Sep 2005</div>
+      <p><strong>B.A., Business Management (Tourism)</strong></p>
+      <p>Hangzhou Normal University</p>
+      <ul class="small">
+        <li>Academic Excellence Award, 2002 and 2003</li>
+        <li>Internship Excellence Award, 2005</li>
+      </ul>
+    </div>
+
+    <h2>Languages</h2>
+    <ul>
+      <li>English <span class="sub">Full professional proficiency</span></li>
+      <li>Mandarin <span class="sub">Native proficiency</span></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <section aria-labelledby="profile">
+      <h2 id="profile">Profile</h2>
+      <p class="lede">Real estate marketing manager with 15 years in Singapore’s property market, specialising in corporate branding, integrated marketing strategy, and the planning and execution of property launches that drive sales performance.</p>
+      <p>Five years of management experience leading teams and overseeing end-to-end marketing projects for property developments, including campaign planning, cross-functional coordination, stakeholder management, and the execution of digital and traditional marketing. Strong in market and trend analysis, with a record of turning insights into effective marketing initiatives.</p>
+      <p>Early career experience in China’s travel industry provided international market exposure and a cross-cultural perspective on customer behaviour and commercial strategy.</p>
+    </section>
+
+    <section aria-labelledby="experience">
+      <h2 id="experience">Professional experience</h2>
+
+      <article class="job current">
+        <h3>Marketing Manager</h3>
+        <div class="meta"><span>GuocoLand Singapore</span><b>2023 – Present</b></div>
+        <h4>Key responsibilities</h4>
+        <ul>
+          <li>Lead integrated marketing strategy and execution for residential developments, presenting recommendations and campaign direction to senior management and key stakeholders.</li>
+          <li>Introduced gen-AI into marketing workflows for campaign ideation and prototyping, rapidly accelerating the development of marketing concepts and materials.</li>
+          <li>Manage multidisciplinary agency partners across creative, digital, CGI, video and social media to strengthen brand positioning and deliver high-impact campaigns.</li>
+          <li>Partner with sales on project positioning, pricing, promotions and sales programmes to drive revenue performance and achieve launch targets.</li>
+          <li>Manage sales and marketing budgets across the project lifecycle, while contributing market insights to development design, product positioning, unit mix and layout decisions.</li>
+        </ul>
+        <h4>Key achievements: units sold at launch</h4>
+        <div class="ledger">
+          <div class="launch">
+            <span class="name">River Modern</span>
+            <div class="bar" role="img" aria-label="90% sold at launch"><i style="--w:90%"></i></div>
+            <div class="units"><b>90%</b> · 410 of 455<span class="beat">173.3% above sales target</span></div>
+          </div>
+          <div class="launch">
+            <span class="name">Springleaf Residence</span>
+            <div class="bar" role="img" aria-label="92% sold at launch"><i style="--w:92%"></i></div>
+            <div class="units"><b>92%</b> · 870 of 941<span class="beat">85% above sales target</span></div>
+          </div>
+          <div class="launch">
+            <span class="name">Faber Residence</span>
+            <div class="bar" role="img" aria-label="86% sold at launch"><i style="--w:86%"></i></div>
+            <div class="units"><b>86%</b> · 344 of 399<span class="beat">72% above sales target</span></div>
+          </div>
+        </div>
+        <ul>
+          <li>Springleaf Residence was recognised as one of the top-selling residential developments in 2025.</li>
+          <li>Led high-profile integrated campaigns across MRT and bus-wrap OOH, social media, influencer partnerships and other large-scale brand awareness initiatives.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>Assistant Marketing Manager</h3>
+        <div class="meta"><span>GuocoLand Singapore</span><b>2022 – 2023</b></div>
+        <h4>Key responsibilities</h4>
+        <ul>
+          <li>Developed and executed sales and marketing plans for residential property developments.</li>
+          <li>Coordinated advertising campaigns, property exhibitions, roadshows, show-flat operations and promotional events.</li>
+          <li>Supported sales teams and external property agents with product information, sales collateral and marketing resources.</li>
+          <li>Managed customer enquiries, maintained sales databases and monitored sales pipeline performance.</li>
+        </ul>
+        <h4>Key achievements</h4>
+        <div class="ledger">
+          <div class="launch">
+            <span class="name">Lentor Modern</span>
+            <div class="bar" role="img" aria-label="84% sold within two days"><i style="--w:84%"></i></div>
+            <div class="units"><b>84%</b> · 508 of 605<span class="beat">Sold in two days, later 100%</span></div>
+          </div>
+        </div>
+        <ul>
+          <li>Contributed to the launch of Lentor Modern, one of Singapore’s best-selling residential launches in 2022.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>Marketing Senior Executive</h3>
+        <div class="meta"><span>GuocoLand Singapore</span><b>2014 – 2022</b></div>
+        <h4>Key responsibilities</h4>
+        <ul>
+          <li>Executed property marketing campaigns and sales activities.</li>
+          <li>Coordinated with sales team, advertising agencies, and project stakeholders.</li>
+          <li>Prepared marketing collaterals, sales presentations, and promotional materials.</li>
+          <li>Conducted market research and maintained databases of prospective customers.</li>
+        </ul>
+        <h4>Key achievements</h4>
+        <ul>
+          <li>Supported the successful launches of Martin Modern, Wallich Residence, Midtown Bay and Midtown Modern.</li>
+          <li>Delivered branding and media campaigns for two flagship integrated mixed-use developments, Guoco Tower and Guoco Midtown, and hosted international journalists for development visits and media engagement.</li>
+          <li>Introduced new marketing initiatives, including interview-led video content and interactive sales kits, to enhance customer engagement and sales presentations.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>Marketing Executive</h3>
+        <div class="meta"><span>Far East Organization</span><b>2011 – 2013</b></div>
+        <ul>
+          <li>Managed Greater China marketing for residential property sales, developing Chinese-language campaigns, digital and social media channels, SEM/SEO initiatives, and online and offline sales activities in collaboration with China-based sales teams.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>Sales and Marketing Manager</h3>
+        <div class="meta"><span>China Travel Service (Hangzhou)</span><b>2005 – 2009</b></div>
+        <ul>
+          <li>Managed inbound tourism sales and marketing for Southeast Asian markets, including product development, budget oversight and international trade events, while supporting Hangzhou’s tourism promotion efforts.</li>
+          <li>Recognised with Hangzhou’s Tourism Gold Medal in 2008 for outstanding industry performance.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer>References available upon request.</footer>
+  </main>
+</div>
+</body>
+</html>
